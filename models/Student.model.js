@@ -5,7 +5,7 @@ const studentSchema = new Schema(
     {
         name: {
             type: String,
-            required: true,
+            required: [true,"Name is required"]
         },
         address: {
             type: String
@@ -15,10 +15,13 @@ const studentSchema = new Schema(
         },
         email: {
             type: String,
-            required: true,
-            unique: true,
+            required: [true, "Email is required"],
             lowercase: true,
             trim: true
+        },
+        password: {
+            type: String,
+            required:  [true, "password is required"],
         },
         profileImg: {
             type: String

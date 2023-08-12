@@ -1,0 +1,36 @@
+<br>
+
+<h1>List of Students</h1>
+<div>
+    <a href="/student/new-student">New student</a>
+</div>
+<br>
+<br>
+<table class="books-table">
+    <tr>
+        <th>Name</th>
+        <th>Phone Number</th>
+        <th>Email</th>
+    </tr>
+    {{#each allStudents}}
+
+    <td>{{name}}</td>
+    <td>{{phoneNumber}}</td>
+    <td>{{email}}</td>
+    <td>
+        <a href="/student/{{_id}}/edit"> <button class="edit-button">Edit</button> </a>
+    </td>
+
+    <form action="/student/{{_id}}/delete" method="POST">
+        <td>
+            <button class="delete-button">delete</button>
+        </td>
+    </form>
+
+    <td>
+        <a href="/student/{{_id}}/details"> <button class="row">Details</button> </a>
+    </td>
+
+    </tr>
+    {{/each}}
+</table>
